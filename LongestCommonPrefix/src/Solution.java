@@ -1,8 +1,9 @@
 public class Solution {
 
 	public static void main(String[] args) {
-		String[] strings = new String[] {"aa", "a"};
+		String[] strings = new String[] {"flow", "flight", "flood"};
 		System.out.println(longestCommonPrefix(strings));
+		System.out.println(longestCommonPrefix2(strings));
 
 	}
 
@@ -43,5 +44,16 @@ public class Solution {
 
 		return strBuilder.toString();
 
+	}
+	
+	public static String longestCommonPrefix2(String[] strs) {
+	  if (strs.length == 0) return "";
+      String prefix = strs[0];
+      for (int i = 1; i < strs.length; i++)
+          while (strs[i].indexOf(prefix) != 0) {
+              prefix = prefix.substring(0, prefix.length() - 1);
+              if (prefix.isEmpty()) return "";
+          }        
+      return prefix;
 	}
 }
