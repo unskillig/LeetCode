@@ -22,8 +22,6 @@ public class Run {
 
 	}
 	
-	
-	
 	public static Stack<Integer> sortStack(Stack<Integer> stack) {
 		Stack<Integer> tempStack = new Stack<>();
 		tempStack.push(stack.pop());
