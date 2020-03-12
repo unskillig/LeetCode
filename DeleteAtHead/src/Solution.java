@@ -17,7 +17,16 @@ public class Solution {
 	
 	public static ListNode deleteAtHead(ListNode head){
 		
-		return (head != null) ? head.getNext() : null;
+		if(head == null || head.getNext() == null) return null;
+		
+		ListNode temp = head;
+		head = null;
+		head = temp;
+		
+		return temp;
+		
+		// kurz: aber head not detached --> memory leak
+		//return (head != null) ? head.getNext() : null;
 		
 	}
 
